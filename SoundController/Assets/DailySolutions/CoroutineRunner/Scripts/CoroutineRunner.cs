@@ -1,11 +1,7 @@
-using System.Collections;
 using DailySolutions.CoroutineRunner.Scripts.Interfaces;
 using UnityEngine;
 
-public class CoroutineRunner : ICoroutineRunner
+// Add this component to a GameObject; MonoBehaviour.StartCoroutine already satisfies the interface.
+public class CoroutineRunner : MonoBehaviour, ICoroutineRunner
 {
-    public Coroutine StartCoroutine(IEnumerator enumerator)
-    {
-        return StartCoroutine(enumerator);
-    }
 }

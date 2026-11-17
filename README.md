@@ -23,7 +23,7 @@ using DailySolutions.CoroutineRunner.Scripts.Interfaces;
 
 // 1. Create a SoundMap asset (Create > Data > SoundMap) and fill in its sounds and mixer.
 // 2. Make a prefab with a SoundSource component and an AudioSource, and assign the AudioSource.
-// 3. Provide an ICoroutineRunner backed by a MonoBehaviour (see the note below).
+// 3. Add the CoroutineRunner component to a GameObject and pass it in (see the note below).
 
 ISoundController sounds = new SoundController(soundMap, soundSourcePrefab, coroutineRunner);
 
@@ -50,7 +50,7 @@ Each `SoundInfo` entry in the `SoundMap` has a clip list (picked at random, or c
 ## Bundled dependencies
 
 - `PoolUtility`: a simple `AudioSource` object pool (`PoolableItem`, `PoolUtility`).
-- `CoroutineRunner`: only the `ICoroutineRunner` interface is usable as is. The included `CoroutineRunner` class calls itself and is not a `MonoBehaviour`, so it will overflow the stack. Implement `ICoroutineRunner` with a `MonoBehaviour` that forwards to its own `StartCoroutine`.
+- `CoroutineRunner`: a `MonoBehaviour` that implements `ICoroutineRunner`. Add it to a GameObject and pass that component to `SoundController`.
 
 ## Status
 
