@@ -1,0 +1,12 @@
+# Unity
+Library/
+Temp/
+Logs/
+obj/
+UserSettings/
+
+# IDE
+.idea/
+.vs/
+*.csproj
+*.sln
